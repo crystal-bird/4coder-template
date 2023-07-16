@@ -1,0 +1,82 @@
+version(2);
+project_name = "Project Name";
+
+patterns =
+{
+    "*.c", "*.cpp",
+    "*.h", "*.hpp",
+    "*.cc", "*.hh",
+    "*.m",
+    "*.glsl", "*.vert", "*.frag",
+    "*.sh", "*.bat",
+    "*.4coder", "*.txt", "*.md",
+};
+
+blacklist_patterns =
+{
+    ".*",
+};
+
+load_paths =
+{
+    .win =
+    {
+        { .path = ".", .recursive = true, .relative = true, },
+    },
+    
+    .linux =
+    {
+        { .path = ".", .recursive = true, .relative = true, },
+    },
+    
+    .mac =
+    {
+        { .path = ".", .recursive = true, .relative = true, },
+    },
+};
+
+commands =
+{
+    .build =
+    {
+        .win = "build.bat",
+        //.linux = "",
+        //.mac = "",
+        
+        .out = "*compilation*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = false,
+    },
+    
+    .debug =
+    {
+        .win = "debug.bat",
+        //.linux = "",
+        //.mac = "",
+        
+        .out = "*compilation*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = false,
+    },
+    
+    .run =
+    {
+        .win = "run.bat",
+        //.linux = "",
+        //.mac = "",
+        
+        .out = "*compilation*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = false,
+    },
+};
+
+fkey_command =
+{
+    .F1 = "build",
+    .F2 = "debug",
+    .F3 = "run",
+};
